@@ -144,7 +144,7 @@ const Home = () => {
           <Plus size={20} />
         </button>
       </div>
-      <div className="flex flex-1 overflow-x-auto">
+      <div className="flex flex-1 flex-col md:flex-row overflow-x-auto">
         {Object.entries(filteredTasks).map(([columnId, columnTasks]) => (
           <TaskList
             key={columnId}

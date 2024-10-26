@@ -32,7 +32,7 @@ const TaskService = {
       if (!currentTask) return;
   
       setTasks(prevTasks => {
-        const newTasks = { ...prevTasks };
+        const newTasks = { ...prevTasks };        
         const targetState = currentTask.state.toLowerCase();
   
         if (isAddingTask) {
@@ -41,7 +41,7 @@ const TaskService = {
             { ...currentTask, owner: currentUser.id }
           ];
         } else {
-          Object.keys(newTasks).forEach(state => {
+          Object.keys(newTasks).forEach(state => {            
             newTasks[state] = newTasks[state].map(task => 
               task.id === currentTask.id ? { ...currentTask, owner: task.owner } : task
             );
