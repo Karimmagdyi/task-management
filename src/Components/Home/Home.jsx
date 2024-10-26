@@ -90,15 +90,31 @@ const Home = () => {
   };
 
   const addOrUpdateTask = () => {
-    TaskService.addOrUpdateTask(currentTask, isAddingTask, setTasks, currentUser, closeTaskModal);
+    TaskService.addOrUpdateTask(
+      currentTask,
+      isAddingTask,
+      setTasks,
+      currentUser,
+      closeTaskModal
+    );
   };
 
   const openAddTaskModal = () => {
-    TaskService.openAddTaskModal(setCurrentTask, setIsAddingTask, setIsModalOpen, currentUser);
+    TaskService.openAddTaskModal(
+      setCurrentTask,
+      setIsAddingTask,
+      setIsModalOpen,
+      currentUser
+    );
   };
 
   const openEditTaskModal = (task) => {
-    TaskService.openEditTaskModal(setCurrentTask, setIsAddingTask, setIsModalOpen, task);
+    TaskService.openEditTaskModal(
+      setCurrentTask,
+      setIsAddingTask,
+      setIsModalOpen,
+      task
+    );
   };
 
   const deleteTask = (taskToDelete) => {
@@ -118,25 +134,24 @@ const Home = () => {
       <div className="mb-4 flex items-center space-x-4">
         <input
           type="text"
-          placeholder="Search tasks..."
+          placeholder="Search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-[110px] sm:w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-[70px] sm:w-full sm:pl-10 sm:pr-4  py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <div>
-        <select
-          value={priorityFilter}
-          onChange={(e) => setPriorityFilter(e.target.value)}
-          className="appearance-none pl-10 pr-8 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-          <option value="All">All Priorities</option>
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
-        </select>
-        
+          <select
+            value={priorityFilter}
+            onChange={(e) => setPriorityFilter(e.target.value)}
+            className="appearance-none pl-10 pr-8 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="All">All Priorities</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
         </div>
-        
+
         <button
           onClick={openAddTaskModal}
           className="bg-blue-500 text-white px-1 sm:px-4 py-2 rounded-lg hover:bg-blue-600  "
