@@ -121,7 +121,7 @@ const Home = () => {
           placeholder="Search tasks..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-[110px] sm:w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <div>
         <select
@@ -139,7 +139,7 @@ const Home = () => {
         
         <button
           onClick={openAddTaskModal}
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+          className="bg-blue-500 text-white px-1 sm:px-4 py-2 rounded-lg hover:bg-blue-600  "
         >
           <Plus size={20} />
         </button>
